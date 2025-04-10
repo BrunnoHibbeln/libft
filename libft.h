@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <stddef.h>
 
 char	*ft_strdup(const char *s);
 int		ft_atoi(const char *nptr);
@@ -22,5 +23,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 int		ft_strlcat(char *dst, char *src, size_t size);
 char	*ft_strlcpy(char *dst, const char *src, size_t size);
+int		ft_isalpha(int c);
 
 #endif
