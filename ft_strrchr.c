@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 12:34:51 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 08:43:36 by bhibbeln         ###   ########.fr       */
+/*   Created: 2025/04/11 10:37:07 by bhibbeln          #+#    #+#             */
+/*   Updated: 2025/04/11 12:01:06 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (((c >= 65) && (c <= 90)) || ((c >= 97) && (c <= 122)))
-		return (1);
-	if ((c >= 48) && (c <= 57))
-		return (1);
-	return (0);
+	unsigned int	s_len;
+	char			*last;
+
+	last = NULL;
+	while (*s)
+	{
+		if (*s == c)
+			last = (char *)s;
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (last);
 }
 /* 
 int	main(void)
 {
-	printf("%d", ft_isalnum('B'));
+	const char s[] = "asudasvv";
+	char c = '\0';
+
+	char *p = ft_strrchr(s, c);
+	if (*p == '\0')
+		printf("null terminator '\\0'");
+	else
+		printf("%s", p);
 } */

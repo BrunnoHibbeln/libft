@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 12:34:51 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 08:43:36 by bhibbeln         ###   ########.fr       */
+/*   Created: 2025/04/11 09:01:00 by bhibbeln          #+#    #+#             */
+/*   Updated: 2025/04/11 09:03:12 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_isprint(int c)
 {
-	if (((c >= 65) && (c <= 90)) || ((c >= 97) && (c <= 122)))
-		return (1);
-	if ((c >= 48) && (c <= 57))
-		return (1);
-	return (0);
+	return ((c >= 32) && (c <= 126));
 }
 /* 
 int	main(void)
 {
-	printf("%d", ft_isalnum('B'));
+	char c = ' ';
+	printf("%d", ft_isprint(c));
 } */

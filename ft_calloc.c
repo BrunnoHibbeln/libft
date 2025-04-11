@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 12:34:51 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 08:43:36 by bhibbeln         ###   ########.fr       */
+/*   Created: 2025/04/11 12:58:13 by bhibbeln          #+#    #+#             */
+/*   Updated: 2025/04/11 13:23:59 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (((c >= 65) && (c <= 90)) || ((c >= 97) && (c <= 122)))
-		return (1);
-	if ((c >= 48) && (c <= 57))
-		return (1);
-	return (0);
+	void 	*p;
+	int		i;
+
+	i = 0;
+	p = malloc(nmemb * size); 
+	if (!*p)
+		return (NULL);
+	while (i < nmemb)
+		p[i++] = '\0';
+	return (p);
 }
-/* 
+
 int	main(void)
 {
-	printf("%d", ft_isalnum('B'));
-} */
+	size_t nmemb = 5;
+	size_t size = 4;
+	char *p = ft_calloc(nmemb, sizeof(size));
+	
+	int i = 0;
+	while (i < nmemb)
+	{
+		printf("%d", p[i] = i);
+		i++;
+	}
+}
