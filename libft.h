@@ -16,12 +16,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stddef.h>
+# include <string.h>
 
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 char	*ft_strnstr(char *big, char *little, size_t len);
 char	*ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strrchr(const char *s, int c);
+void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 int		ft_strlcat(char *dst, char *src, size_t size);

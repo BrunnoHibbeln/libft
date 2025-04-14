@@ -14,28 +14,35 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void 	*p;
-	int		i;
+	void 			*p;
+	unsigned char	*up;
+	size_t			total;
+	size_t			i;
 
-	i = 0;
-	p = malloc(nmemb * size); 
-	if (!*p)
+	total = nmemb * size;
+	p = malloc(total);
+	if (p == NULL)
 		return (NULL);
-	while (i < nmemb)
-		p[i++] = '\0';
+	up = (unsigned char *)p;
+	i = 0;
+	while (i < total)
+		up[i++] = 0;
 	return (p);
 }
 
-int	main(void)
-{
-	size_t nmemb = 5;
-	size_t size = 4;
-	char *p = ft_calloc(nmemb, sizeof(size));
-	
-	int i = 0;
-	while (i < nmemb)
-	{
-		printf("%d", p[i] = i);
-		i++;
-	}
-}
+// int	main(void)
+// {
+// 	size_t nmemb = 5;
+// 	char *p = ft_calloc(nmemb, sizeof(char));
+
+// 	int i = 0;
+// 	while (i < nmemb)
+// 	{
+// 		if (!p[i])
+// 			printf("'\\0'");
+// 		else
+// 			printf("%f", p[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
