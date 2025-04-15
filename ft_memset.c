@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
+/*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:08:59 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/13 16:08:59 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:05:28 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		us[i++] = c;
 	return (s);
 }
-
+/* 
 int	main(void)
 {
 	char buffer[5];
@@ -42,4 +42,4 @@ int	main(void)
 	printf("Standard memset result: %s\n", std_buffer);
 
 	return 0;
-}
+} */

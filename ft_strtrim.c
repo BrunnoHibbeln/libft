@@ -3,78 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
+/*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:34:32 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/14 19:34:32 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:05:51 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char *big, char *little)
+static int	check(const char *big, const char *little, int len)
 {
-	char	*b;
-	char	*l;
-	int		i;
+	const char	*b;
+	const char	*l;
+	int			i;
 
 	i = 0;
-	if (!*little)
-		return (big);
 	while (*big)
 	{
-		if ((*big == *little))
+		if ((*big == *little) && (i < len))
 		{
 			b = big;
 			l = little;
-			while ((*b == *l) && (*b) && (*l))
+			while ((*b == *l) && (*b) && (*l) && (i++ < len))
 			{
 				b++;
 				l++;
 			}
 			if (!*l)
-				return (big);
+				return (1);
 		}
 		i++;
 		big++;
 	}
-	return (NULL);
-}
-
-static
-
-static int	cmp(const char *s1, const char *s2)
-{
-	size_t	i;
-
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
 	return (0);
 }
 
-static int	get_len(char const *s1, char const *set)
+static int	get_len(char const *s)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		if (cmp(s1[i], set[j]))
-			i++;
-		else
-			check(s1, set);
-	}
+	while (s[i])
+		i++;
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		i;
+	int		j;
+	char	*s_cpy;
+	int		set_len;
 
+	set_len = get_len(set);
+	s_cpy = (char *)malloc(get_len(s1) + 1);
+	if (!s_cpy)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		if (s1[i] != set[0])
+			s_cpy[j++] = s1[i++];
+		else
+		{
+			if (check(s1 + i, set, set_len))
+				i += set_len;
+			else
+				s_cpy[j++] = s1[i++];
+		}
+	}
+	s_cpy[j] = '\0';
+	return (s_cpy);
 }
+/* 
+int	main(void)
+{
+	char *p = ft_strtrim("aastringaaaastringaaaastringaa", "string");
+	printf("%s", p);
+} */

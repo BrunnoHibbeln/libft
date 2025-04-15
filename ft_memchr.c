@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
+/*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:58:29 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/14 13:58:29 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:04:22 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-    const unsigned char	*us;
-    unsigned char		target;
+	const unsigned char	*us;
+	unsigned char		target;
 	size_t				i;
 
 	i = 0;
 	target = (unsigned char)c;
-	us = (const unsigned char*)s;
-    while (i < n)
+	us = (const unsigned char *)s;
+	while (i < n)
 	{
-        if (us[i] == target) {
-            return (void *)(us + i);
-        }
+		if (us[i] == target)
+		{
+			return ((void *)(us + i));
+		}
 		i++;
-    }
-    return (NULL);
+	}
+	return (NULL);
 }
-
+/* 
 int	main(void)
 {
     // Test case 1: Basic search for a character in a string
@@ -66,17 +67,6 @@ int	main(void)
     else
         printf("Not found\n");
 
-    // Test case 4: Search with limited length
-    char str4[] = "Hello, World!";
-    char c4 = 'o';
-    size_t n4 = 4; // Limit search to first 4 characters
-    void *result4 = ft_memchr(str4, c4, n4);
-    printf("\nTest 4: Searching for '%c' in first 4 chars of \"%s\"\n", c4, str4);
-    if (result4)
-        printf("Found at position: %ld\n", (char*)result4 - str4);
-    else
-        printf("Not found\n");
-
     // Test case 5: Search for null character
     char str5[] = "Test\0Hidden";
     char c5 = '\0';
@@ -89,4 +79,4 @@ int	main(void)
         printf("Not found\n");
 
     return (0);
-}
+} */

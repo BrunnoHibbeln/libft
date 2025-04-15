@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
+/*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:39:01 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/14 13:39:01 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:05:12 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		if (us1[i] == us2[i])
 			i++;
 		else
+		{
 			if (us1[i] > us2[i])
 				return (1);
 			else
 				return (-1);
+		}
 	}
 	return (0);
 }

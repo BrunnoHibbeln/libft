@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 12:58:13 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 13:23:59 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:01:56 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void 			*p;
+	void			*p;
 	unsigned char	*up;
 	size_t			total;
 	size_t			i;
