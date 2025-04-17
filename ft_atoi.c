@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:13:53 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/09 14:26:20 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/04/17 11:30:10 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	is_odd = 0;
 	while ((*nptr == 32) || ((*nptr > 8) && (*nptr < 14)))
 		nptr++;
-	while ((*nptr == 43) || (*nptr == 45))
+	if ((*nptr == 43) || (*nptr == 45))
 	{
 		if (*nptr == 45)
 			is_odd++;
@@ -33,14 +33,14 @@ int	ft_atoi(const char *nptr)
 		num += *nptr - 48;
 		nptr++;
 	}
-	if ((is_odd % 2) != 0)
+	if ((is_odd % 2) != 0 )
 		return (-(num));
 	return (num);
 }
 /* 
 int	main(void)
 {
-	char nptr[] = "  +-1234ab567";
+	char nptr[] = " -79aaaa69";
 	printf("atoi: %d\n",atoi(nptr));
 	printf("ft_atoi: %d\n",ft_atoi(nptr));
 } */
