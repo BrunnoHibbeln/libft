@@ -12,19 +12,44 @@
 
 #include "libft.h"
 
-static void	ft_print(unsigned int n, char)
+static char	ft_sub_ascii(unsigned int n, char c)
 {
-	printf("%d", n);
+	return (c - 1);
+}
+
+static int	ft_getlen(char const *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	
+	size_t	s_len;
+	char	*p;
+	int		i;
+
+	if (!s)
+		return (NULL);
+	s_len = ft_getlen(s);
+	i = 0;
+	p = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (!p)
+		return (NULL);
+	while (s[i])
+	{
+		p[i] = f(i, s[i]);
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
 
-int	main(void)
-{
-	char tab[] = "String";
-	int length = 5;
-	ft_foreach(tab, 5, &ft_print);
-}
+// int	main(void)
+// {
+// 	printf("%s",ft_strmapi("Efv!dfsup", &ft_sub_ascii));
+// }
