@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 16:04:30 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/18 16:04:30 by bhibbeln         ###   ########.fr       */
+/*   Created: 2025/04/24 12:53:51 by bhibbeln          #+#    #+#             */
+/*   Updated: 2025/04/24 12:53:51 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
-/*
-int	main(void)
+/* 
+int main(void)
 {
-	int a = 1, b = 2;
+	int a = 1;
+	int b = 2;
 	t_list *node1 = ft_lstnew(&a);
 	t_list *node2 = ft_lstnew(&b);
-	ft_lstadd_front(&node1, node2); // node2 becomes the new head
+
+	node2->next = node1; // node2 is now the head
+
 	printf("First node: %d\n", *(int *)node2->content);
-	printf("Second node: %d\n", *(int *)node2->next->content);
-}
- */
+	printf("Second node: %d\n\n", *(int *)node2->next->content);
+
+	t_list *last = ft_lstlast(node2);
+	printf("Last node: %d\n", *(int *)last->content);
+} */

@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhibbeln <brunnohibbeln@student.42lisbo    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 16:04:30 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/18 16:04:30 by bhibbeln         ###   ########.fr       */
+/*   Created: 2025/04/24 12:22:13 by bhibbeln          #+#    #+#             */
+/*   Updated: 2025/04/24 12:22:13 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int ft_lstsize(t_list *lst)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	int	i;
+
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
-/*
-int	main(void)
+/* 
+int main(void)
 {
-	int a = 1, b = 2;
+	int a = 1;
+	int b = 2;
 	t_list *node1 = ft_lstnew(&a);
 	t_list *node2 = ft_lstnew(&b);
-	ft_lstadd_front(&node1, node2); // node2 becomes the new head
+
+	node2->next = node1; // node2 is now the head
+
 	printf("First node: %d\n", *(int *)node2->content);
 	printf("Second node: %d\n", *(int *)node2->next->content);
-}
- */
+	printf("Node count: %d\n", ft_lstsize(node2));
+} */

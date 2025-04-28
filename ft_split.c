@@ -109,10 +109,11 @@ char	**ft_split(char const *s, char c)
 	sv[words] = '\0';
 	return (sv);
 }
-
-// int	main(void)
-// {
-// 	char **sv = ft_split("Hello.there.dude.my.men.lets.go", '.');
-// 	while (*sv)
-// 		printf("%s\n", *sv++);
-// }
+/* 
+int	main(void)
+{
+	char **sv = ft_split("Hello.there.dude.my.men.lets.go", '.');
+	while (*sv)
+		printf("%s\n", *sv++);
+}
+ */
