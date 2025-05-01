@@ -6,80 +6,49 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 19:34:32 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/15 14:05:51 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/05/01 18:15:13 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check(const char *big, const char *little, int len)
+static int	is_in_set(char c, const char *set)
 {
-	const char	*b;
-	const char	*l;
-	int			i;
-
-	i = 0;
-	while (*big)
+	while (*set)
 	{
-		if ((*big == *little) && (i < len))
-		{
-			b = big;
-			l = little;
-			while ((*b == *l) && (*b) && (*l) && (i++ < len))
-			{
-				b++;
-				l++;
-			}
-			if (!*l)
-				return (1);
-		}
-		i++;
-		big++;
+		if (c == *set)
+			return (1);
+		set++;
 	}
 	return (0);
 }
 
-static int	get_len(char const *s)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	i;
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	char	*trimmed;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		i;
-	int		j;
-	char	*s_cpy;
-	int		set_len;
-
-	set_len = get_len(set);
-	s_cpy = (char *)malloc(get_len(s1) + 1);
-	if (!s_cpy)
+	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		if (s1[i] != set[0])
-			s_cpy[j++] = s1[i++];
-		else
-		{
-			if (check(s1 + i, set, set_len))
-				i += set_len;
-			else
-				s_cpy[j++] = s1[i++];
-		}
-	}
-	s_cpy[j] = '\0';
-	return (s_cpy);
+	start = 0;
+	while (s1[start] && is_in_set(s1[start], set))
+		start++;
+	end = strlen(s1);
+	while (end > start && is_in_set(s1[end - 1], set))
+		end--;
+	len = end - start;
+	trimmed = (char *)malloc(len + 1);
+	if (!trimmed)
+		return (NULL);
+	strncpy(trimmed, s1 + start, len);
+	trimmed[len] = '\0';
+	return (trimmed);
 }
 /* 
 int	main(void)
 {
-	char *p = ft_strtrim("aastringaaaastringaaaastringaa", "string");
+	char *p = ft_strtrim("lorem ipsum dolor sit amet \n \t ", "\t \n");
 	printf("%s", p);
-} */
+}*/

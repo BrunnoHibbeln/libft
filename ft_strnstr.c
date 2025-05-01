@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 09:17:12 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 12:00:53 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:43:10 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(char *big, char *little, size_t len)
 {
 	char	*b;
 	char	*l;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (!*little)

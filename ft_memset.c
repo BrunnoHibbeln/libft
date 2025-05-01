@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:08:59 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/15 14:05:28 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:35:28 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*us;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	us = (unsigned char *)s;

@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:52:19 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/15 17:22:59 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/05/01 17:38:28 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ static int	fill(char **sv, char const *s, char c)
 		{
 			if (!alloc(sv, i, (len + 1)))
 				return (0);
+			cpy(sv[i], (s - len), (len + 1));
+			i++;
 		}
-		cpy(sv[i], (s - len), (len + 1));
-		i++;
 	}
 	return (1);
 }
@@ -106,14 +106,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (!fill(sv, s, c))
 		return (NULL);
-	sv[words] = '\0';
+	sv[words] = NULL;
 	return (sv);
 }
 /* 
 int	main(void)
 {
-	char **sv = ft_split("Hello.there.dude.my.men.lets.go", '.');
+	char **sv = ft_split(".................", '.');
 	while (*sv)
 		printf("%s\n", *sv++);
-}
- */
+} */

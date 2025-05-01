@@ -6,7 +6,7 @@
 /*   By: bhibbeln <bhibbeln@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 10:37:07 by bhibbeln          #+#    #+#             */
-/*   Updated: 2025/04/11 12:01:06 by bhibbeln         ###   ########.fr       */
+/*   Updated: 2025/05/01 14:36:47 by bhibbeln         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	s_len;
 	char			*last;
 
 	last = NULL;
